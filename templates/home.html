@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home | Compost Quality Analyzer</title>
+    <style>
+        body { 
+            margin:0; 
+            font-family: Arial, sans-serif; 
+            background:#f3f7f3; 
+        }
+        .nav {
+            background:#2e7d32; 
+            padding:14px; 
+            color:white;
+        }
+        .nav a {
+            color:white; 
+            margin-right:16px; 
+            text-decoration:none;
+            font-weight: bold;
+        }
+        .hero {
+            padding:60px 20px;
+            text-align:center;
+            background:white;
+            box-shadow:0 0 10px #ccc;
+        }
+        .hero h1 {
+            font-size:34px; 
+            margin-bottom:10px;
+            color:#2e7d32;
+        }
+        .hero p {
+            font-size:18px; 
+            color:#444;
+        }
+        .btn {
+            background:#2e7d32; 
+            padding:12px 22px; 
+            border:none;
+            color:white; 
+            font-size:16px; 
+            border-radius:6px;
+            cursor:pointer;
+        }
+        .section {
+            padding:40px 20px;
+            text-align:center;
+        }
+        .card-container {
+            display:flex; 
+            justify-content:center; 
+            gap:20px;
+            flex-wrap:wrap;
+        }
+        .card {
+            width:260px; 
+            background:white; 
+            padding:20px;
+            border-radius:10px; 
+            box-shadow:0 0 10px #ccc;
+        }
+        .card h3 {
+            margin-top:0;
+            color:#2e7d32;
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/predict">Predict</a>
+    <a href="/login">Login</a>
+</div>
+
+<div class="hero">
+    <h1>🌱 Compost Quality Analyzer</h1>
+    <p>Analyze compost quality, check suitability, and get smart improvement suggestions.</p>
+    <button class="btn" onclick="window.location='/predict'">Start Prediction</button>
+</div>
+
+<div class="section">
+    <h2>Why Use This Tool?</h2>
+
+    <div class="card-container">
+        <div class="card">
+            <h3>Instant Analysis</h3>
+            <p>Get instant compost suitability classification using Machine Learning.</p>
+        </div>
+
+        <div class="card">
+            <h3>Smart Suggestions</h3>
+            <p>Receive AI-generated improvement guidance for poor compost samples.</p>
+        </div>
+
+        <div class="card">
+            <h3>Easy to Use</h3>
+            <p>Simple interface for farmers, students, labs, and researchers.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

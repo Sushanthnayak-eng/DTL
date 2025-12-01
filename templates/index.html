@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Compost Quality Predictor</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  body { font-family: Inter, Arial, sans-serif; background:#f3f7f2; margin:0; padding:24px; }
+  .card { max-width:760px; margin:28px auto; background:white; padding:20px 26px; border-radius:12px; box-shadow:0 6px 20px rgba(30,30,30,0.06); }
+  h1 { margin:0 0 12px 0; font-size:22px; }
+  label { display:block; margin-top:10px; font-size:13px; color:#333; }
+  input[type="text"], input[type="number"] { width:100%; padding:8px 10px; margin-top:6px; border:1px solid #d7e3d8; border-radius:8px; box-sizing:border-box; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  button { margin-top:14px; background:#2e7d32; color:white; padding:10px 14px; border:0; border-radius:8px; cursor:pointer; font-weight:600; }
+  .result { margin-top:18px; padding:14px; border-radius:8px; background:#f7fff7; border:1px solid #e6f4e6; }
+  ul.suggestions { margin:8px 0 0 18px; }
+  .small { font-size:13px; color:#666; }
+  .footer { text-align:center; color:#888; font-size:13px; margin-top:14px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>🌱 Compost Quality Predictor</h1>
+    <p class="small">Enter compost sample values and press <strong>Predict</strong>. The app uses your trained RandomForest model.</p>
+
+    <form method="POST">
+      <div class="grid">
+        {% for f in feature_names %}
+          <div>
+            <label>{{f}}</label>
+            <input name="{{f}}" type="text" value="{{ sample_in[f] if sample_in else '' }}" placeholder="Enter {{f}}">
+          </div>
+        {% endfor %}
+      </div>
+
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+      <strong>Prediction:</strong> {{ result }}<br/>
+      {% if prob is not none %}
+        <strong>Confidence (Suitable):</strong> {{ '%.2f'|format(prob) }}<br/>
+      {% endif %}
+      <div style="margin-top:8px;">
+        <strong>Suggestions:</strong>
+        <ul class="suggestions">
+          {% for s in suggestions %}
+          <li>{{ s }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="footer">Model files loaded from <code>models/</code>. Use <code>python train_and_demo.py --retrain</code> to retrain.</div>
+  </div>
+</body>
+</html>
