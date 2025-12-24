@@ -1,0 +1,43 @@
+{
+  "training_date": "2025-12-24T08:30:00.776656",
+  "feature_names": [
+    "Temperature",
+    "MC(%)",
+    "pH",
+    "C/N Ratio",
+    "Ammonia(mg/kg)",
+    "Nitrate(mg/kg)",
+    "TN(%)",
+    "TOC(%)",
+    "EC(ms/cm)",
+    "OM(%)",
+    "T Value",
+    "GI(%)"
+  ],
+  "target_name": "Score",
+  "model_type": "RandomForestRegressor",
+  "n_estimators": 200,
+  "max_depth": 15,
+  "train_samples": 361,
+  "test_samples": 91,
+  "train_r2": 0.9963580162431624,
+  "test_r2": 0.9825546395694579,
+  "test_rmse": 2.1901807997167086,
+  "test_mae": 1.074795584180007,
+  "cv_r2_mean": 0.9821557312584621,
+  "cv_r2_std": 0.0030897826764556386,
+  "feature_importance": {
+    "Temperature": 0.0017082915878000962,
+    "MC(%)": 0.0016931999785236534,
+    "pH": 0.0037915373348315455,
+    "C/N Ratio": 0.004777051969474657,
+    "Ammonia(mg/kg)": 0.0032857843615997587,
+    "Nitrate(mg/kg)": 0.0009905621250007656,
+    "TN(%)": 0.0008030287388484825,
+    "TOC(%)": 0.0021313240241699976,
+    "EC(ms/cm)": 0.000821070956468287,
+    "OM(%)": 0.001767585430557972,
+    "T Value": 0.2691092315245898,
+    "GI(%)": 0.7091213319681349
+  }
+}

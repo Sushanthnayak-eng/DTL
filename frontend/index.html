@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Compost Quality Predictor</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Animated background blobs -->
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
+  <div class="app">
+    <div class="glass-card">
+
+      <header>
+        <h1>🌱 Compost Quality Predictor</h1>
+        <p>AI-powered compost quality & maturity analysis</p>
+      </header>
+
+      <!-- INPUTS -->
+      <section class="inputs">
+
+        <h3>Environmental</h3>
+        <div class="grid">
+          <input id="Temperature" placeholder="Temperature (°C)">
+          <input id="MC_percent" placeholder="Moisture (%)">
+          <input id="pH" placeholder="pH">
+          <input id="CN_Ratio" placeholder="C/N Ratio">
+        </div>
+
+        <h3>Chemical</h3>
+        <div class="grid">
+          <input id="Ammonia_mgkg" placeholder="Ammonia (mg/kg)">
+          <input id="Nitrate_mgkg" placeholder="Nitrate (mg/kg)">
+          <input id="TN_percent" placeholder="TN (%)">
+          <input id="TOC_percent" placeholder="TOC (%)">
+        </div>
+
+        <h3>Biological</h3>
+        <div class="grid">
+          <input id="EC_mscm" placeholder="EC (ms/cm)">
+          <input id="OM_percent" placeholder="OM (%)">
+          <input id="T_Value" placeholder="T Value">
+          <input id="GI_percent" placeholder="GI (%)">
+        </div>
+
+      </section>
+
+      <button id="predictBtn" onclick="predict()">Predict Quality</button>
+
+      <!-- RESULT -->
+      <section id="result" class="result hidden"></section>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
